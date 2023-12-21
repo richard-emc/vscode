@@ -7,6 +7,7 @@ int main () {
     cout <<"what is your favorite number" << endl;
     cin >> x ;
     cout << "your favorite number is " << x << endl;
+    /* test from pc*/
     return 0;
 
 }
