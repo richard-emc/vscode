@@ -1,4 +1,6 @@
 #include <iostream>
+#include "teste1.h"
+
 using namespace std;
 
 int main () {
@@ -8,6 +10,7 @@ int main () {
     cin >> x ;
     cout << "your favorite number is " << x << endl;
     /* test from pc*/
+    teste();
     return 0;
 
 }
