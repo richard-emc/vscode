@@ -10,6 +10,8 @@
 				"-g",
 				"-Wall",
 				"-std=c++17",
+				"include/*.h",
+				"src/*.cpp",
 				"${fileDirname}/*.cpp",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"

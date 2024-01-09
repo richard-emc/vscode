@@ -1,6 +1,6 @@
 #include <iostream>
-#include "menu.h"
-#include "inventory.h"
+#include "include/menu.h"
+#include "include/inventory.h"
 
 using namespace std;
 
