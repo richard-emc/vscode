@@ -1,5 +1,6 @@
 #include <iostream>
 #include "menu.h"
+#include "inventory.h"
 
 using namespace std;
 
