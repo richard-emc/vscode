@@ -32,7 +32,6 @@ void funcaomenu(){
         case 3:{
             cout << "inside switch case 3\n";
         };
-        break;
         default:
             cout << "invalid choice. Please choose another one";
             break;
@@ -43,5 +42,6 @@ void funcaomenu(){
 };
 
 void teste(){
+    testeinventory();
     cout << "funcao teste" << endl;
 }

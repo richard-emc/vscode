@@ -3,4 +3,6 @@
 #include <iostream>
 #include <vector>
 
+void testeinventory();
+
 #endif //_INVENTORY_H_
