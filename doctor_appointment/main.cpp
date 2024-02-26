@@ -21,8 +21,8 @@ int bookAppointment()
     if(read)
     {
         string line;
-        char key = 'A';
-        int i = 9;
+        //char key = 'A';
+        //int i = 9;
         while(getline(read,line))
         {
             char temp = line[0];
@@ -133,8 +133,8 @@ int existingAppointment()
     if(read)
     {
         string line;
-        char key = 'A';
-        int i = 9;
+        //char key = 'A';
+        //int i = 9;
 
         while(getline(read, line))
         {
