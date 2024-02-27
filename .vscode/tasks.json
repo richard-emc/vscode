@@ -10,9 +10,10 @@
 				"-g",
 				"-Wall",
 				"-std=c++17",
-				//"include/*.h",
-				//"src/*.cpp",
-				"${fileDirname}/main.cpp",
+				"inventory.cpp",  // Include source files from the 'src' directory
+				"inventory.h",      // Include source files from the current directory
+				"main.cpp", // Include source files from the current file's directory
+				//"${fileDirname}/*.h",   // Include header files from the current file's directory
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],
