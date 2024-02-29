@@ -9,11 +9,10 @@
 
 int Product::nextCode = 1;
 
-Product::Product(string name, int quantity, double price):
-    code(nextCode++), name(name), quantity(quantity), price(price){
-        recordTransaction(0);
+Product::Product(string name, int quantity, double pprice):
+    code(nextCode++), name(name), quantity(quantity), price(pprice){
+        recordTransaction(0, pprice);
     }
-
 
 void Product::display() const
 {
@@ -22,18 +21,19 @@ void Product::display() const
     cout<<"QUantity: "<<quantity<<endl;
     cout<<"Price: "<<price<<endl;
 }
-void Product::recordTransaction(int quantityChange)
+
+void Product::recordTransaction(int quantityChange, int unityprice)
 {
     auto now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     string timestamp = ctime(&now);
 
     transactionHistory.emplace_back(timestamp, quantityChange);
     quantity += quantityChange;
+    price = unityprice;
 
     if(!transactionHistory.empty())
     {
-        price= transactionHistory.back().quantityChange == 0 ? price: price/quantity * (quantity+quantityChange);
-
+        price= unityprice;
 
     }
 };
@@ -90,13 +90,13 @@ void Inventory::saveData() const
     }
 }
 
-void Inventory::recordTransaction(int productCode, int quantityChange)
+void Inventory::recordTransaction(int productCode, int quantityChange, int unitaryprice)
 {
     for( auto& product:products)
     {
         if(product.code == productCode)
         {
-            product.recordTransaction(quantityChange);
+            product.recordTransaction(quantityChange, unitaryprice);
             product.saveTransactionToFile();
             break;
         }

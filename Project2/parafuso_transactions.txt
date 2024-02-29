@@ -1,0 +1,2 @@
+Timestamp: Thu Feb 29 13:52:01 2024
+, Quantity Change: 10, Updated Price: 20

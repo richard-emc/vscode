@@ -1,2 +1,0 @@
-Timestamp: Tue Feb 27 13:31:34 2024
-, Quantity Change: -10, Updated Price: 37.5

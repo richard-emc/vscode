@@ -31,7 +31,7 @@ class Product
 
         void display() const;
 
-        void recordTransaction(int quantityChange);
+        void recordTransaction(int quantityChange, int unityprice);
 
         void saveTransactionToFile() const;
 };
@@ -51,7 +51,7 @@ class Inventory
 
         void saveData() const;
 
-        void recordTransaction(int productCode, int quantityChange);
+        void recordTransaction(int productCode, int quantityChange, int unitaryprice);
 
     private:
         void loadData();

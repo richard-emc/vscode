@@ -1,0 +1,4 @@
+1 parafuso 10 0
+2 parafuso2 10 10
+3 parafuso3 10 20
+4 parafuso4 20 20

@@ -43,7 +43,7 @@ int main () {
             {
             string name;
             int quantity;
-            double price;
+            double initialprice;
 
             cout << "\nEnter product details:\n";
             cout << "Name: ";
@@ -51,22 +51,25 @@ int main () {
             cout << "Initial Quantity: ";
             cin >> quantity;
             cout << "Initial Price: ";
-            cin >> price;
+            cin >> initialprice;
 
-            Product newProduct(name, quantity, price);
+            Product newProduct(name, quantity, initialprice);
             inventory.addProduct(newProduct);
             std::cout << "Product added successfully! Code: " << newProduct.code << "\n";
+            inventory.saveData();
             break;
             }  
 
             case 3: {
-                int productCode, quantityChange;
+                int productCode, quantityChange, unitaryprice;
                 cout << "\nEnter product code: ";
                 cin >> productCode;
                 cout << "Enter quantity change (positive for income, negative for outcome): ";
                 cin >> quantityChange;
+                cout << "Enter Price";
+                cin >> unitaryprice;
 
-                inventory.recordTransaction(productCode, quantityChange);
+                inventory.recordTransaction(productCode, quantityChange, unitaryprice);
                 cout << "Transaction recorded successfully!\n";
                 break;
             }
