@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -36,6 +37,7 @@ int main () {
             {
             cout<<"\n=== Displaying Inventory ===\n";
             inventory.displayInventory();
+            inventory.saveData();
             break;
             }
 
@@ -61,18 +63,45 @@ int main () {
             }  
 
             case 3: {
-                int productCode, quantityChange, unitaryprice;
+                int productCode, quantityChange;
                 cout << "\nEnter product code: ";
                 cin >> productCode;
+
+                // Check if the product with the given code exists in stock
+                bool productExists = false;
+                Product selectedProduct; // To store the selected product
+                for (const auto &product : inventory.getProducts()) {
+                if (product.code == productCode) {
+                    productExists = true;
+                    selectedProduct = product;
+                    break;
+                    }
+                }
+
+                if (!productExists){
+                cerr << "Error: Product with code " << productCode << " not found in stock. Transaction not recorded.\n";
+                break; // Exit the function if the product is not found
+                }
+
                 cout << "Enter quantity change (positive for income, negative for outcome): ";
                 cin >> quantityChange;
-                cout << "Enter Price";
+
+                // Check if quantity + quantityChange is negative
+                if (selectedProduct.quantity + quantityChange < 0) {
+                    cerr << "\n\nError: Cannot have negative quantity. Transaction not recorded.\n";
+                    cout << "Max quantity in stock for product " << selectedProduct.name << " is: " << selectedProduct.quantity << endl;
+                    break;;
+                }
+
+                // Now that we know quantity + quantityChange is not negative, proceed to ask for the price
+                int unitaryprice;
+                cout << "Enter Price: ";
                 cin >> unitaryprice;
 
                 inventory.recordTransaction(productCode, quantityChange, unitaryprice);
                 cout << "Transaction recorded successfully!\n";
                 break;
-            }
+                }
             
             case 4:
                 std::cout << "Saving data and exiting...\n";

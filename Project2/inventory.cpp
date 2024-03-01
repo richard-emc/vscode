@@ -6,8 +6,15 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <iomanip>
+using namespace std;
 
 int Product::nextCode = 1;
+
+Product::Product():
+     code(0),name(""),quantity(0),price(0.0) {
+    recordTransaction(0, 0);
+}
 
 Product::Product(string name, int quantity, double pprice):
     code(nextCode++), name(name), quantity(quantity), price(pprice){
@@ -16,10 +23,11 @@ Product::Product(string name, int quantity, double pprice):
 
 void Product::display() const
 {
-    cout<<"Code: "<<code<<endl;
-    cout<<"Name: "<<name<<endl;
-    cout<<"QUantity: "<<quantity<<endl;
-    cout<<"Price: "<<price<<endl;
+    // Display header
+     cout << setw(10) << "Code" << setw(20) << "Name" << setw(15) << "Quantity" << setw(15) << "Price" << '\n'; 
+
+    // Display each product
+    cout << setw(10) << code << setw(20) << name << setw(15) << quantity << setw(15) << price << '\n';
 }
 
 void Product::recordTransaction(int quantityChange, int unityprice)
@@ -27,6 +35,11 @@ void Product::recordTransaction(int quantityChange, int unityprice)
     auto now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     string timestamp = ctime(&now);
 
+/*    if (quantity + quantityChange < 0){
+        cerr<<"Error: cannot have negative quantity. Transaction not recorde.\n";
+        cout<<"max quantity in stock is: "<<quantity<<endl;
+        return;
+    }else*/{
     transactionHistory.emplace_back(timestamp, quantityChange);
     quantity += quantityChange;
     price = unityprice;
@@ -34,6 +47,8 @@ void Product::recordTransaction(int quantityChange, int unityprice)
     if(!transactionHistory.empty())
     {
         price= unityprice;
+
+    }
 
     }
 };
@@ -68,9 +83,12 @@ void Inventory::addProduct(const Product& product)
 
 void Inventory::displayInventory() const
 {
-    for(const auto& product:products)
+    // Display header
+     cout << setw(10) << "Code" << setw(20) << "Name" << setw(15) << "Quantity" << setw(15) << "Price" << '\n'; 
+    
+    for (const auto &product : products)
     {
-        product.display();
+        cout << setw(10) << product.code << setw(20) << product.name << setw(15) << product.quantity << setw(15) << product.price << '\n';
     }
 }
 

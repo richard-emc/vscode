@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 
@@ -13,6 +14,7 @@ class Transaction
     public:
     string timestamp;
     int quantityChange;
+    int unitaryprice;
 
     Transaction(string time, int change):timestamp(time), quantityChange(change){}
 };
@@ -26,6 +28,8 @@ class Product
         int quantity;
         double price;
         vector<Transaction> transactionHistory;
+
+        Product();
         
         Product(string name, int quantity, double price);
 
@@ -52,6 +56,10 @@ class Inventory
         void saveData() const;
 
         void recordTransaction(int productCode, int quantityChange, int unitaryprice);
+
+        const std::vector<Product>& getProducts() const {
+        return products;
+        }
 
     private:
         void loadData();
