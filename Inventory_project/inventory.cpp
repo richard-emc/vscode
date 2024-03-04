@@ -99,7 +99,7 @@ void Inventory::saveData() const
     {
         for(const auto& product : products)
         {
-            outputFile<<product.code<<" "<<product.name<<" "<<product.quantity<<" "<<product.price<<endl;
+            outputFile << product.code << " \"" << product.name << "\" " << product.quantity << " " << product.price << endl;
         }
         outputFile.close();
     }else 

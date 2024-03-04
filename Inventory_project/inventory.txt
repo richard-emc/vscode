@@ -1,3 +1,0 @@
-1 parafuso 2 10
-2 parafuso 3 2
-3 parafuso 3 10 30
