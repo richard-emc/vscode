@@ -49,7 +49,8 @@ int main () {
 
             cout << "\nEnter product details:\n";
             cout << "Name: ";
-            cin >> name;
+            cin.ignore();
+            getline(cin, name);
             cout << "Initial Quantity: ";
             cin >> quantity;
             cout << "Initial Price: ";
@@ -103,10 +104,11 @@ int main () {
                 break;
                 }
             
-            case 4:
+            case 4:{
                 std::cout << "Saving data and exiting...\n";
                 inventory.saveData();
                 break;
+            }
 
             default:
                 std::cout << "Invalid choice. Please enter a number between 1 and 4.\n";
