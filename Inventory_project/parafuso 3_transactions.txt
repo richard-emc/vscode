@@ -1,0 +1,6 @@
+Product Code: 1098960Quantity Change: -5, Updated Price: 15Timestamp: Wed Mar  6 13:04:54 2024
+Product Code: 1098960Quantity Change: 5, Updated Price: 2Timestamp: Wed Mar  6 13:08:34 2024
+Product Code: -5Quantity Change: 20, Updated Price: 2Timestamp: Wed Mar  6 13:19:42 2024
+Product Code: 2Quantity Change: -5, Updated Price: 20Timestamp: Wed Mar  6 13:21:58 2024
+Quantity Change: -20, Total Quantity: 10, Updated Price: 20, Timestamp: Wed Mar  6 13:35:01 2024
+Quantity Change: 5, Total Quantity: 15, Updated Price: 30, Timestamp: Wed Mar  6 13:35:18 2024

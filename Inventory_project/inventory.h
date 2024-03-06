@@ -15,8 +15,9 @@ class Transaction
     string timestamp;
     int quantityChange;
     int unitaryprice;
+    int productCode;
 
-    Transaction(string time, int change):timestamp(time), quantityChange(change){}
+    Transaction(int productCode, string time, int change):timestamp(time), quantityChange(change), productCode(productCode){}
 };
 
 class Product
@@ -35,7 +36,7 @@ class Product
 
         void display() const;
 
-        void recordTransaction(int quantityChange, int unityprice);
+        void recordTransaction(int productCode, int quantityChange, int unityprice);
 
         void saveTransactionToFile() const;
 };

@@ -91,16 +91,21 @@ int main () {
                 if (selectedProduct.quantity + quantityChange < 0) {
                     cerr << "\n\nError: Cannot have negative quantity. Transaction not recorded.\n";
                     cout << "Max quantity in stock for product " << selectedProduct.name << " is: " << selectedProduct.quantity << endl;
-                    break;;
+                    break;
                 }
 
                 // Now that we know quantity + quantityChange is not negative, proceed to ask for the price
                 int unitaryprice;
+                if(quantityChange>0){
                 cout << "Enter Price: ";
                 cin >> unitaryprice;
+                }else{
+                    unitaryprice = selectedProduct.price;
+                }
 
                 inventory.recordTransaction(productCode, quantityChange, unitaryprice);
                 cout << "Transaction recorded successfully!\n";
+                inventory.saveData();
                 break;
                 }
             

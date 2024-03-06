@@ -1,0 +1,2 @@
+1 "parafuso 2" 5 20
+2 "parafuso 3" 15 30
