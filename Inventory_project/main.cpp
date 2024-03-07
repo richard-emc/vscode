@@ -59,6 +59,7 @@ int main () {
             Product newProduct(name, quantity, initialprice);
             inventory.addProduct(newProduct);
             std::cout << "Product added successfully! Code: " << newProduct.code << "\n";
+            inventory.recordTransaction(newProduct.code, quantity, initialprice);
             inventory.saveData();
             break;
             }  

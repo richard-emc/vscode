@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <string> // Add this line
 
+void displayMenu();
 
 class Product{
     std::string name;
