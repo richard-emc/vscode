@@ -1,13 +1,12 @@
 #include <iostream>
-#include "include/menu.h"
-#include "include/inventory.h"
+#include "machine.h"
 
 using namespace std;
 
 int main () {
-    teste();
-    vector<product> inventory;
+    //teste();
+    //vector<product> inventory;
     
-    funcaomenu();
+    //funcaomenu();
     return 0;
 }
